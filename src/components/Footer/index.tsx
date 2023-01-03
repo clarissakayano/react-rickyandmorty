@@ -1,11 +1,43 @@
 import { memo } from 'react';
 
 import { Container } from 'react-bootstrap';
-import { BgColor } from './styles';
+import { BsFillSuitHeartFill, BsGithub, BsTwitter } from 'react-icons/bs';
+import {
+  MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md';
+import { SiNetlify } from 'react-icons/si';
+
+import { BgColor, By, Color } from './styles';
 
 const Footer = () => (
   <BgColor>
     <Container>
+      <div className="d-flex justify-content-center mt-3">
+        <SiNetlify color="#ffffff" size={30} />
+        <div>
+          <div className="col">
+            <span className="color m-2">DEPLOYS BY</span>
+          </div>
+
+          <div className="col">
+            <Color className=" m-2">netlify</Color>
+          </div>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center mt-3">
+        <BsGithub className="me-3" color="#6f7072" />
+        <BsTwitter className="me-3" color="#6f7072" />
+        <BsFillSuitHeartFill className="me-3" color="#6f7072" />
+      </div>
+      <div className="d-flex justify-content-center mt-3">
+        <MdOutlineArrowBackIosNew color="#6f7072" />
+        <MdOutlineArrowForwardIos color="#6f7072" />
+        <By>
+          by <Color>Clarissa Kayano </Color>2022
+        </By>
+      </div>
+
       <p>The Ricy and Morty</p>
     </Container>
   </BgColor>

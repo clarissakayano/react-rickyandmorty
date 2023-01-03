@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     *{
@@ -11,8 +11,6 @@ export default createGlobalStyle`
         min-height: 100vh;
 
     }
-
-    
 
     /* unvisited link */
     a:link {

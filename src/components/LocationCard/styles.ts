@@ -18,3 +18,8 @@ interface ICardLocProps {
 export const CardLoc = styled.li<ICardLocProps>`
   font-size: ${({ fontSize }) => fontSize};
 `;
+
+export const Subtitle = styled.span`
+font-size:18px;
+margin-top:10px;
+`;

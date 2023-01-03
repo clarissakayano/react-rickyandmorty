@@ -3,12 +3,13 @@ import { memo, useCallback, useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Pagination } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import LocationCard from 'components/LocationCard';
 
 import { LocationType } from 'types/LocationsType';
 
-import { BgColor } from './styles';
+import { BgColor, Title } from './styles';
 
 const Locations: React.FC = () => {
   const params = useParams();
@@ -42,45 +43,49 @@ const Locations: React.FC = () => {
   );
 
   return (
-    <BgColor className="sm={1} md={2}">
-      <Header />
-      <Container>
-        {isLoading && (
-          <div className="text-center">
-            <Spinner animation="grow" variant="primary" />
-            <Spinner animation="grow" variant="dark" />
-            <Spinner animation="grow" variant="success" />
-          </div>
-        )}
-        {!isLoading && (
-          <>
-            <Row className="row-cols-2 g-3 justify-content-center mb-5">
-              {locations.map((location) => (
-                <Col key={location.id} className="d-flex sm={1}">
-                  <LocationCard location={location} />
-                </Col>
-              ))}
-            </Row>
+    <>
+      <BgColor className="sm={1} md={2}">
+        <Header />
+        <Container>
+          {isLoading && (
+            <div className="text-center">
+              <Spinner animation="grow" variant="primary" />
+              <Spinner animation="grow" variant="dark" />
+              <Spinner animation="grow" variant="success" />
+            </div>
+          )}
+          <Title>Location</Title>
+          {!isLoading && (
+            <>
+              <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-3 justify-content-center mb-5">
+                {locations.map((location) => (
+                  <Col key={location.id} className="d-flex sm={1}">
+                    <LocationCard location={location} />
+                  </Col>
+                ))}
+              </Row>
 
-            {InfoPages > 1 && (
-              <Pagination className="flex-wrap justify-content-center mb-5">
-                {Array(InfoPages)
-                  .fill(null)
-                  .map((pageItem, index) => (
-                    <Pagination.Item
-                      key={index} // eslint-disable-line react/no-array-index-key
-                      active={currentPage === index + 1}
-                      onClick={() => handlePageChange(index + 1)}
-                    >
-                      {index + 1}
-                    </Pagination.Item>
-                  ))}
-              </Pagination>
-            )}
-          </>
-        )}
-      </Container>
-    </BgColor>
+              {InfoPages > 1 && (
+                <Pagination className="flex-wrap justify-content-center mb-5">
+                  {Array(InfoPages)
+                    .fill(null)
+                    .map((pageItem, index) => (
+                      <Pagination.Item
+                        key={index} // eslint-disable-line react/no-array-index-key
+                        active={currentPage === index + 1}
+                        onClick={() => handlePageChange(index + 1)}
+                      >
+                        {index + 1}
+                      </Pagination.Item>
+                    ))}
+                </Pagination>
+              )}
+            </>
+          )}
+        </Container>
+      </BgColor>
+      <Footer />
+    </>
   );
 };
 

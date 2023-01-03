@@ -51,3 +51,9 @@ font-size: ${({ fontSize }) => fontSize}rem;
 font-family: font-family: 'Mouse Memoirs', sans-serif;
 
 `;
+
+export const Nav = styled.span`
+font-size: 25px;
+font-family: 'Helvetica Neue', sans-serif;
+color:white;
+`;

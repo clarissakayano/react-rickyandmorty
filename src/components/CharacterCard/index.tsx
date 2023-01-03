@@ -7,28 +7,38 @@ import { strToSlug } from 'helpers';
 
 import { CharacterType } from 'types/CharacterType';
 
-import { Cover } from './styles';
+import { Cover, Subtitle, Name } from './styles';
 
 interface ICharacterCardProps {
   character: CharacterType;
 }
 
 const CharacterCard: React.FC<ICharacterCardProps> = ({ character }) => (
-  <Card className="w-100">
-    <Cover
-      aspectRatio="1x1"
-      style={{
-        backgroundImage: `url(${character.image})`,
-      }}
-    >
-      <div/>
-    </Cover>
+  <Card className="w-100 color">
+    <Link to={`/characters/${character.id}/${character.name}`}>
+      <Cover
+        aspectRatio="1x1"
+        style={{
+          backgroundImage: `url(${character.image})`,
+        }}
+      >
+        <div />
+      </Cover>
+    </Link>
     <Card.Body>
       <Card.Title>
         <Link to={`/characters/${character.id}/${strToSlug(character.name)}`}>
-          {character.name}
+          <Name>{character.name}</Name>
         </Link>
       </Card.Title>
+      <p>
+        {character.status}-{character.species}
+      </p>
+      <span />
+      <Subtitle>Last known location:</Subtitle>
+      <p>{character.location.name}</p>
+      <Subtitle>Origin:</Subtitle>
+      <p>{character.origin.name}</p>
     </Card.Body>
   </Card>
 );

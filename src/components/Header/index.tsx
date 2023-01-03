@@ -2,8 +2,9 @@ import { memo } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { BannerContainer, TitleRM } from './styles';
+import { BannerContainer, TitleRM, Nav } from './styles';
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const Header = () => (
   <BannerContainer className="flex-grow-1 mb-3">
     <header>
@@ -12,17 +13,17 @@ const Header = () => (
           <ul className="d-flex justify-content-between list-unstyled">
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                HOME
+                <Nav>HOME</Nav>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/location">
-                Location
+                <Nav>Location</Nav>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/episodes">
-                Episodes
+                <Nav>Episodes</Nav>
               </Link>
             </li>
           </ul>

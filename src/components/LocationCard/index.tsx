@@ -4,43 +4,34 @@ import { Card } from 'react-bootstrap';
 
 import { LocationType } from 'types/LocationsType';
 
-import { CardLoc, Cover } from './styles';
+import { CardLoc, Cover, Subtitle } from './styles';
 
 interface ILocationsCardProps {
   children?: React.ReactNode;
-  location: LocationsType;
+  location: LocationType;
 }
 
 const LocationCard: React.FC<ILocationsCardProps> = ({ location }) => (
   <Card>
     <Card.Body>
       <Card.Title>
-        <h2>Name:</h2>
-        <li> {location.name}</li>
+        <h4>Name: {location.name}</h4>
       </Card.Title>
-      <CardLoc fontSize={1} className="d-flex mb-2 flex-wrap">
-        <ul>
-          <h2>Type</h2>
-          <li>{location.type}</li>
-          <ul />
-          <h2>Dimension:</h2>
-          <li> {location.dimension}</li>
+      <CardLoc fontSize={1} className="d-flex mb-3 flex-wrap">
+        <div className="row">
+          <div className="col">
+            <h4>
+              Type:<Subtitle> {location.type}</Subtitle>{' '}
+            </h4>
+          </div>
 
-          {location.residents.length > 0 && (
-            <>
-              <h2>Residents:</h2>
-              <ul>
-                {location.residents.map((residents) => (
-                  <li key={residents}>{residents}</li>
-                ))}
-              </ul>
-            </>
-          )}
-        </ul>
-        <ul>
-          <h2>Created:</h2>
-          <li> {location.created}</li>
-        </ul>
+          <h4>
+            Dimension:<Subtitle> {location.dimension}</Subtitle>
+          </h4>
+          <h4>
+            Created:<Subtitle> {location.created}</Subtitle>
+          </h4>
+        </div>
       </CardLoc>
     </Card.Body>
   </Card>

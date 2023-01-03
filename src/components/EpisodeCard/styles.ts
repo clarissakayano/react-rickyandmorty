@@ -10,3 +10,6 @@ export const Cover = styled(Ratio)<ICoverProps>`
   background-size: cover;
   background-position: center center;
 `;
+export const Text = styled.h3`
+  color: black;
+`;

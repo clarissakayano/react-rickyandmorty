@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 
 import { EpisodesType } from 'types/EpisodesType';
 
-import { Cover } from './styles';
+import { Cover, Text } from './styles';
 
 interface IEpisodesCardProps {
   episode: EpisodesType;
@@ -12,19 +12,13 @@ interface IEpisodesCardProps {
 
 const EpisodeCard: React.FC<IEpisodesCardProps> = ({ episode }) => (
   <Card className="w-100">
-    <Cover aspectRatio="1x1">
-      <div />
-    </Cover>
     <Card.Body>
       <Card.Title>
-        <p>{episode.episode}</p>
-        <p>{episode.air_date}</p>
-        <p className="fw-bold">Characters:</p>
-        <ul>
-          {episode.characters.map((characters) => (
-            <li>{characters}</li>
-          ))}
-        </ul>
+        <p>
+          <Text>Episode: {episode.episode}</Text>
+        </p>
+        <p>Air Date: {episode.air_date}</p>
+        <p className="fw-bold">Characters: {episode.characters.length}</p>
       </Card.Title>
     </Card.Body>
   </Card>
