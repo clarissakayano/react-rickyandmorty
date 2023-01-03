@@ -6,7 +6,7 @@ import { BannerContainer, TitleRM, Nav } from './styles';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const Header = () => (
-  <BannerContainer className="flex-grow-1 mb-3">
+  <BannerContainer className="flex-grow-1 mb-3 img-fluid">
     <header>
       <div className="container py-4 d-flex justify-content-3 align-items-center">
         <div className="container">
@@ -32,7 +32,7 @@ const Header = () => (
       <div className="d-flex justify-content-center">
         <TitleRM fontSize={6} className="mt-5">
           {' '}
-          The Ricky and Morty
+          The Rick and Morty
         </TitleRM>
       </div>
     </header>

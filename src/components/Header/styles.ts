@@ -12,6 +12,24 @@ export const BannerContainer = styled.section`
   padding: 0;
   box-sizing: border-box;
 
+  @media screen and (width: 320px) {
+    height: 250px;
+    background-size: 120%;
+    background-position-y: 0rem;
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 575px) {
+    height: 300px;
+    background-size: 120%;
+    background-position-y: 0rem;
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    height: 500px;
+    background-size: 120%;
+    background-position-y: 0rem;
+  }
+
   background-color: #010a01;
   animation: flicker 1.5s infinite alternate;
   color: #fff;
@@ -48,6 +66,10 @@ export const TitleRM = styled.h1<ITitleRMProps>`
   font-size: ${({ fontSize }) => fontSize}rem;
   font-family: 'Mouse Memoirs', sans-serif;
   text-align: -webkit-center;
+
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Nav = styled.span`
