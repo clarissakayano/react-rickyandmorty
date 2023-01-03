@@ -30,7 +30,7 @@ const Header = () => (
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <TitleRM fontSize={4} className="mt-5">
+        <TitleRM fontSize={6} className="mt-5">
           {' '}
           The Ricky and Morty
         </TitleRM>

@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 import bannerBackground from 'assets/rickym.jpg';
 
-import TitleRM from 'components/TitleRM';
-
 export const BannerContainer = styled.section`
   background-image: url(${bannerBackground});
   background-repeat: no-repeat;
@@ -47,9 +45,9 @@ interface ITitleRMProps {
 }
 
 export const TitleRM = styled.h1<ITitleRMProps>`
-font-size: ${({ fontSize }) => fontSize}rem;
-font-family: font-family: 'Mouse Memoirs', sans-serif;
-
+  font-size: ${({ fontSize }) => fontSize}rem;
+  font-family: 'Mouse Memoirs', sans-serif;
+  text-align: -webkit-center;
 `;
 
 export const Nav = styled.span`

@@ -17,12 +17,7 @@ interface ICharacterCardProps {
 const CharacterCard: React.FC<ICharacterCardProps> = ({ character }) => (
   <Card className="w-100 color mb-3">
     <Link to={`/characters/${character.id}/${character.name}`}>
-      <Cover
-        aspectRatio="1x1"
-        style={{
-          backgroundImage: `url(${character.image})`,
-        }}
-      >
+      <Cover aspectRatio="1x1" coverImage={character.image}>
         <div />
       </Cover>
     </Link>
