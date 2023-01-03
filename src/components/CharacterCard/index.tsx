@@ -11,10 +11,11 @@ import { Cover, Subtitle, Name } from './styles';
 
 interface ICharacterCardProps {
   character: CharacterType;
+  children?: React.ReactNode;
 }
 
 const CharacterCard: React.FC<ICharacterCardProps> = ({ character }) => (
-  <Card className="w-100 color">
+  <Card className="w-100 color mb-3">
     <Link to={`/characters/${character.id}/${character.name}`}>
       <Cover
         aspectRatio="1x1"

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { Ratio } from 'react-bootstrap';
 import styled from 'styled-components';
 
