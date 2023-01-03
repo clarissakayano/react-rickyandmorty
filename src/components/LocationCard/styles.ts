@@ -20,6 +20,6 @@ export const CardLoc = styled.li<ICardLocProps>`
 `;
 
 export const Subtitle = styled.span`
-font-size:18px;
-margin-top:10px;
+  font-size: 18px;
+  margin-top: 10px;
 `;

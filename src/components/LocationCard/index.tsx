@@ -4,10 +4,10 @@ import { Card } from 'react-bootstrap';
 
 import { LocationType } from 'types/LocationsType';
 
-import { CardLoc, Cover, Subtitle } from './styles';
+import { CardLoc, Subtitle } from './styles';
 
 interface ILocationsCardProps {
-  children?: React.ReactNode;
+  // children?: React.ReactNode;
   location: LocationType;
 }
 

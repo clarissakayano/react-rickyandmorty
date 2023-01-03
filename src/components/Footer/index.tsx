@@ -10,7 +10,7 @@ import { SiNetlify } from 'react-icons/si';
 
 import { BgColor, By, Color } from './styles';
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <BgColor>
     <Container>
       <div className="d-flex justify-content-center mt-3">
