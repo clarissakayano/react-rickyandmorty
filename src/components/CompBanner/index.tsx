@@ -1,10 +1,8 @@
 import { memo } from 'react';
 
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import rm from 'assets/ricky1.jpg';
-
-import NavBanner from 'components/NavBanner';
 
 import { BannerMainContainer } from './styles';
 
