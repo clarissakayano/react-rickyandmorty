@@ -7,6 +7,7 @@ import {
   MdOutlineArrowForwardIos,
 } from 'react-icons/md';
 import { SiNetlify } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 
 import { BgColor, By, Color } from './styles';
 
@@ -26,9 +27,18 @@ const Footer: React.FC = () => (
         </div>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <BsGithub className="me-3" color="#6f7072" />
-        <BsTwitter className="me-3" color="#6f7072" />
-        <BsFillSuitHeartFill className="me-3" color="#6f7072" />
+        <div>
+          <a href="https://github.com/clarissakayano" target="blank">
+            <BsGithub className="me-3" color="#6f7072" />
+          </a>
+        </div>
+        <a href="https://twitter.com/i/flow/login" target="blank">
+          <BsTwitter className="me-3" color="#6f7072" />
+        </a>
+
+        <a href="https://www.instagram.com/" target="blank">
+          <BsFillSuitHeartFill className="me-3" color="#6f7072" />
+        </a>
       </div>
       <div className="d-flex justify-content-center mt-3">
         <MdOutlineArrowBackIosNew color="#6f7072" />
