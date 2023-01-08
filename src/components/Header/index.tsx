@@ -3,16 +3,24 @@ import { memo, useState } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
-import { MenuMobile } from 'components/MenuMobile';
+import Mobile02 from 'components/Mobile02';
 
 import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const Header = () => {
+const Header: React.FC = () => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   return (
     <BannerContainer className="flex-grow-1 mb-3">
       <header>
+        <ContainerMobile>
+          <div className="container d-sm-none ">
+            <div className="row">
+              <Log className="d-flex justify-content-end">
+                <Mobile02 />
+              </Log>
+            </div>
+          </div>
+        </ContainerMobile>
         <div className="container">
           <div className=" d-flex text-center p-4 row-col-none d-none d-sm-block d-lg-block d-xl-block">
             <ul className="d-flex justify-content-between list-unstyled">
@@ -34,23 +42,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <ContainerMobile>
-          <div className="container d-sm-none ">
-            <div className="row">
-              <Log className="d-flex justify-content-end">
-                <RxHamburgerMenu
-                  color="white"
-                  size={30}
-                  onClick={() => setMenuIsVisible(true)}
-                />
-              </Log>
-              <MenuMobile
-                menuIsVisible={menuIsVisible}
-                setMenuIsVisible={setMenuIsVisible}
-              />
-            </div>
-          </div>
-        </ContainerMobile>
+
         <div className="d-flex justify-content-center">
           <TitleRM fontSize={6} className="mt-5">
             {' '}

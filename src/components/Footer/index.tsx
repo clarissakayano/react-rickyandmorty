@@ -7,7 +7,6 @@ import {
   MdOutlineArrowForwardIos,
 } from 'react-icons/md';
 import { SiNetlify } from 'react-icons/si';
-import { Link } from 'react-router-dom';
 
 import { BgColor, By, Color } from './styles';
 
