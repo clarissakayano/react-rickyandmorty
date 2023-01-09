@@ -17,8 +17,8 @@ const Mobile02: React.FC = () => {
       </div>
 
       {open && (
-        <BgContainer>
-          <FiXCircle color="white" size={30} onClick={() => setOpen(!open)} />
+        <BgContainer onClick={() => setOpen(!open)}>
+          <FiXCircle color="white" size={30} />
           <div className="d-flex justify-content-center">
             <nav className=" mt-5 ">
               <Link className="nav-link mt-5 " to="/">

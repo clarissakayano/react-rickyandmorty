@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-interface IMenuProps {
-  isMenuOpened: boolean;
-}
-
 export const List = styled.ul`
   display: flex;
   list-style: none;

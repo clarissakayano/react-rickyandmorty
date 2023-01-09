@@ -1,6 +1,5 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 
-import { RxHamburgerMenu } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
 import Mobile02 from 'components/Mobile02';
@@ -8,7 +7,6 @@ import Mobile02 from 'components/Mobile02';
 import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
 
 const Header: React.FC = () => {
-  const [menuIsVisible, setMenuIsVisible] = useState(false);
   return (
     <BannerContainer className="flex-grow-1 mb-3">
       <header>

@@ -14,7 +14,7 @@ export const Container = styled.div`
     position: absolute;
     top: 1rem;
     right: 1rem;
-    transition: 0.7s;
+    transition: all 0.15s ease-in-out;
   }
 `;
 
