@@ -33,9 +33,9 @@ const Character: React.FC = () => {
 
   return (
     <>
+      <Header />
       <BgImg>
         <Container>
-          <Header />
           <NameColor className="d-flex justify-content-center">
             {character?.name ?? 'Loading...'}
           </NameColor>

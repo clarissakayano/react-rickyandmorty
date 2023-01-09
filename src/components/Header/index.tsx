@@ -8,7 +8,7 @@ import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
 
 const Header: React.FC = () => {
   return (
-    <BannerContainer className="flex-grow-1 mb-3">
+    <BannerContainer className="flex-grow-1">
       <header>
         <ContainerMobile>
           <div className="container d-sm-none ">

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
@@ -9,12 +9,14 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
   align-items: start;
+  z-index: 1;
 
   svg {
     position: absolute;
     top: 1rem;
     right: 1rem;
     transition: all 0.15s ease-in-out;
+    transition: transform 0.5s ease;
   }
 `;
 
