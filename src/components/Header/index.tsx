@@ -8,17 +8,17 @@ import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
 
 const Header: React.FC = () => {
   return (
-    <BannerContainer className="flex-grow-1">
-      <header>
-        <ContainerMobile>
-          <div className="container d-sm-none ">
-            <div className="row">
-              <Log className="d-flex justify-content-end">
-                <Mobile02 />
-              </Log>
-            </div>
+    <header>
+      <ContainerMobile>
+        <div className="container d-sm-none">
+          <div className="row">
+            <Log className="d-flex justify-content-end">
+              <Mobile02 />
+            </Log>
           </div>
-        </ContainerMobile>
+        </div>
+      </ContainerMobile>
+      <BannerContainer className="flex-grow-1">
         <div className="container">
           <div className=" d-flex text-center p-4 row-col-none d-none d-sm-block d-lg-block d-xl-block">
             <ul className="d-flex justify-content-between list-unstyled">
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
             The Rick and Morty
           </TitleRM>
         </div>
-      </header>
-    </BannerContainer>
+      </BannerContainer>
+    </header>
   );
 };
 

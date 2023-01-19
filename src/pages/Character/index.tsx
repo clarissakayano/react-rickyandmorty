@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import { Container, Spinner } from 'react-bootstrap';
+import { Button, Container, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 import Footer from 'components/Footer';
@@ -36,7 +36,7 @@ const Character: React.FC = () => {
       <Header />
       <BgImg>
         <Container>
-          <NameColor className="d-flex justify-content-center">
+          <NameColor className="d-flex justify-content-center mt-4">
             {character?.name ?? 'Loading...'}
           </NameColor>
           {isLoading && (
@@ -70,6 +70,11 @@ const Character: React.FC = () => {
               </TextColor>
             </div>
           )}
+          <div className="d-flex justify-content-center py-3">
+            <Button className="btncolor mb-4" href="/">
+              Back
+            </Button>
+          </div>
         </Container>
       </BgImg>
       <Footer />

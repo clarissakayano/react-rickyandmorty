@@ -30,7 +30,7 @@ const Mobile02: React.FC = () => {
               </Link>
 
               <Link className="nav-link mt-4" to="/episodes">
-                <Nav>Episódios</Nav>
+                <Nav>Episodes</Nav>
               </Link>
             </nav>
           </div>

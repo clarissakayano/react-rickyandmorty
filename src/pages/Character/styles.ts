@@ -5,6 +5,13 @@ export const BgImg = styled.div`
   list-style:none {
     list-style-type: none;
   }
+  .btncolor {
+    color: white;
+    background-color: green;
+    border-color: inherit;
+    display: inline-flex;
+    justify-content: center;
+  }
 `;
 export const TextColor = styled.div`
   color: white;

@@ -1,11 +1,13 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import { Container, Row, Col, Spinner, Pagination } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import LocationCard from 'components/LocationCard';
+
+import { Pagination } from 'styles/GlobalStyles/Pagination';
 
 import { LocationType } from 'types/LocationsType';
 
@@ -57,7 +59,7 @@ const Locations: React.FC = () => {
           <Title>Location</Title>
           {!isLoading && (
             <>
-              <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-3 justify-content-center mb-5">
+              <Row className="row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center mb-5">
                 {locations.map((location) => (
                   <Col key={location.id} className="d-flex sm={1}">
                     <LocationCard location={location} />
@@ -66,19 +68,16 @@ const Locations: React.FC = () => {
               </Row>
 
               {InfoPages > 1 && (
-                <Pagination className="flex-wrap justify-content-center mb-5">
-                  {Array(InfoPages)
-                    .fill(null)
-                    .map((pageItem, index) => (
-                      <Pagination.Item
-                        key={index} // eslint-disable-line react/no-array-index-key
-                        active={currentPage === index + 1}
-                        onClick={() => handlePageChange(index + 1)}
-                      >
-                        {index + 1}
-                      </Pagination.Item>
-                    ))}
-                </Pagination>
+                <Pagination
+                  className="flex-wrap justify-content-center mb-5"
+                  forcePage={currentPage - 1}
+                  onPageChange={(p) => handlePageChange(p.selected + 1)}
+                  pageCount={InfoPages}
+                  pageRangeDisplayed={2}
+                  marginPagesDisplayed={2}
+                  previousLabel="<<"
+                  nextLabel=">>"
+                />
               )}
             </>
           )}

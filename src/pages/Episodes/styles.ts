@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BgColor = styled.div`
-  background-color: #6c25be;
+  background-color: #edb8fa;
 `;
 export const Title = styled.h1`
   color: black;

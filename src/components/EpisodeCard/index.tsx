@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 
 import { EpisodesType } from 'types/EpisodesType';
 
-import { Cover, Text } from './styles';
+import { Text } from './styles';
 
 interface IEpisodesCardProps {
   episode: EpisodesType;

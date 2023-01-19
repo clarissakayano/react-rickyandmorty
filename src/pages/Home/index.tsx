@@ -1,10 +1,12 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import { Container, Row, Col, Spinner, Pagination } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 import CharacterCard from 'components/CharacterCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+
+import { Pagination } from 'styles/GlobalStyles/Pagination';
 
 import { CharacterType } from 'types/CharacterType';
 
@@ -53,7 +55,7 @@ const Home: React.FC = () => {
           )}
           {!isLoading && (
             <>
-              <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 justify-content-center mb-5">
+              <Row className="row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center mb-5">
                 {characters.map((character) => (
                   <Col key={character.id} className="d-flex sm={1}">
                     <CharacterCard character={character} />
@@ -62,19 +64,16 @@ const Home: React.FC = () => {
               </Row>
 
               {InfoPages > 1 && (
-                <Pagination className="flex-wrap justify-content-center mb-5">
-                  {Array(InfoPages)
-                    .fill(null)
-                    .map((_, index) => (
-                      <Pagination.Item
-                        key={index} // eslint-disable-line react/no-array-index-key
-                        active={currentPage === index + 1}
-                        onClick={() => handlePageChange(index + 1)}
-                      >
-                        {index + 1}
-                      </Pagination.Item>
-                    ))}
-                </Pagination>
+                <Pagination
+                  className="flex-wrap justify-content-center mb-5"
+                  forcePage={currentPage - 1}
+                  onPageChange={(p) => handlePageChange(p.selected + 1)}
+                  pageCount={InfoPages}
+                  pageRangeDisplayed={2}
+                  marginPagesDisplayed={2}
+                  previousLabel="<<"
+                  nextLabel=">>"
+                />
               )}
             </>
           )}

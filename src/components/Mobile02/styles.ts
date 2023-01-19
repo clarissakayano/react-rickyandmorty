@@ -18,11 +18,15 @@ export const Container = styled.div`
     transition: all 0.15s ease-in-out;
     transition: transform 0.5s ease;
   }
+
+  .nav-link {
+    color: white;
+  }
 `;
 
 export const BgContainer = styled.div`
-  background-color: #252b42;
-  height: 100%;
+  background-color: purple;
+  height: 105%;
   width: 100%;
   transition: 0.5s;
 `;

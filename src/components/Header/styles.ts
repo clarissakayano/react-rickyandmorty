@@ -6,9 +6,9 @@ export const BannerContainer = styled.section`
   background-image: url(${bannerBackground});
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 500px;
   background-position: center;
-  margin: 0;
+  margin-top: -8px;
   padding: 0;
   box-sizing: border-box;
 
@@ -16,22 +16,18 @@ export const BannerContainer = styled.section`
     height: 230px;
     background-size: 120%;
     background-position-y: 0rem;
+    background-size: cover;
   }
 
   @media screen and (min-width: 321px) and (max-width: 374px) {
     height: 300px;
     background-size: 120%;
     background-position-y: 0rem;
+    background-size: cover;
   }
 
   @media screen and (min-width: 375px) and (max-width: 575px) {
     height: 300px;
-    background-size: 120%;
-    background-position-y: 0rem;
-  }
-
-  @media screen and (min-width: 576px) and (max-width: 767px) {
-    height: 500px;
     background-size: 120%;
     background-position-y: 0rem;
   }
@@ -97,4 +93,7 @@ export const Log = styled.h3`
 
 export const ContainerMobile = styled.div`
   background-color: transparent;
+`;
+export const Cont = styled.div`
+  padding-top: -8;
 `;

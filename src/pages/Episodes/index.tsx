@@ -1,11 +1,13 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import { Container, Row, Col, Spinner, Pagination } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 import EpisodeCard from 'components/EpisodeCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+
+import { Pagination } from 'styles/GlobalStyles/Pagination';
 
 import { EpisodesType } from 'types/EpisodesType';
 
@@ -13,7 +15,7 @@ import { BgColor, Title } from './styles';
 
 const Episodes: React.FC = () => {
   const params = useParams();
-  console.log('params', params);
+
   const [episodes, setEpisodes] = useState<EpisodesType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [InfoPages, setInfoPages] = useState(0);
@@ -27,7 +29,6 @@ const Episodes: React.FC = () => {
 
     setIsLoading(false);
     setEpisodes(results);
-    console.log('results', results);
     setInfoPages(info.pages);
     setCurrentPage(page);
   }, []);
@@ -67,19 +68,16 @@ const Episodes: React.FC = () => {
               </Row>
 
               {InfoPages > 1 && (
-                <Pagination className="flex-wrap justify-content-center mb-5">
-                  {Array(InfoPages)
-                    .fill(null)
-                    .map((_, index) => (
-                      <Pagination.Item
-                        key={index} // eslint-disable-line react/no-array-index-key
-                        active={currentPage === index + 1}
-                        onClick={() => handlePageChange(index + 1)}
-                      >
-                        {index + 1}
-                      </Pagination.Item>
-                    ))}
-                </Pagination>
+                <Pagination
+                  className="flex-wrap justify-content-center mb-5"
+                  forcePage={currentPage - 1}
+                  onPageChange={(p) => handlePageChange(p.selected + 1)}
+                  pageCount={InfoPages}
+                  pageRangeDisplayed={2}
+                  marginPagesDisplayed={2}
+                  previousLabel="<<"
+                  nextLabel=">>"
+                />
               )}
             </div>
           )}

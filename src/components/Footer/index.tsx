@@ -1,7 +1,12 @@
 import { memo } from 'react';
 
 import { Container } from 'react-bootstrap';
-import { BsFillSuitHeartFill, BsGithub, BsTwitter } from 'react-icons/bs';
+import {
+  BsFillSuitHeartFill,
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+} from 'react-icons/bs';
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
@@ -38,7 +43,14 @@ const Footer: React.FC = () => (
         <a href="https://www.instagram.com/" target="blank">
           <BsFillSuitHeartFill className="me-3" color="#6f7072" />
         </a>
+        <a
+          href="https://www.linkedin.com/in/clarissa-a-kayano-37a011259/"
+          target="blank"
+        >
+          <BsLinkedin className="me-3" color="#6f7072" />
+        </a>
       </div>
+
       <div className="d-flex justify-content-center mt-3">
         <MdOutlineArrowBackIosNew color="#6f7072" />
         <MdOutlineArrowForwardIos color="#6f7072" />
