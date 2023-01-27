@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Mobile02 from 'components/Mobile02';
+import Mobile from 'components/Mobile';
 
 import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
 
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <div className="container d-sm-none">
           <div className="row">
             <Log className="d-flex justify-content-end">
-              <Mobile02 />
+              <Mobile />
             </Log>
           </div>
         </div>

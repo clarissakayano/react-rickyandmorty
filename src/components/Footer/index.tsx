@@ -17,8 +17,8 @@ import { BgColor, By, Color } from './styles';
 
 const Footer: React.FC = () => (
   <BgColor>
-    <Container className="mb-4">
-      <div className="d-flex justify-content-center mt-4">
+    <Container className="mb-2">
+      <div className="d-flex justify-content-center mt-2">
         <SiNetlify color="#ffffff" size={30} />
         <div>
           <div className="col">

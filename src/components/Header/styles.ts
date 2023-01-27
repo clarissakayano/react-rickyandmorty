@@ -19,14 +19,14 @@ export const BannerContainer = styled.section`
     background-size: cover;
   }
 
-  @media screen and (min-width: 321px) and (max-width: 374px) {
+  @media screen and (min-width: 321px) and (max-width: 375px) {
     height: 300px;
     background-size: 120%;
     background-position-y: 0rem;
     background-size: cover;
   }
 
-  @media screen and (min-width: 375px) and (max-width: 575px) {
+  @media screen and (min-width: 376px) and (max-width: 575px) {
     height: 300px;
     background-size: 120%;
     background-position-y: 0rem;
