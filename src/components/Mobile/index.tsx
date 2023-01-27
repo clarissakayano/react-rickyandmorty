@@ -8,7 +8,11 @@ import { Link } from 'react-router-dom';
 
 import { BgContainer, Container, MenuNav } from './styles';
 
-const Mobile: React.FC = () => {
+interface IMenuProps {
+  children?: React.ReactNode;
+}
+
+const Mobile: React.FC<IMenuProps> = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -19,6 +23,7 @@ const Mobile: React.FC = () => {
 
       {open && (
         <MenuNav
+          isMenuOpened={open}
           onClick={() => setOpen(!open)}
           className="d-flex d-md-none flex-column position-fixed "
         >

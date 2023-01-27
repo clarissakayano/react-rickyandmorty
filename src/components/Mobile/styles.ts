@@ -39,36 +39,33 @@ export const BgContainer = styled.div`
 
 interface IMenuProps {
   isMenuOpened: boolean;
+  children?: React.ReactNode;
 }
 
 const down = keyframes`
-    from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-`;
-const toup = keyframes`
    from {
     transform: translateY(-100%);
   }
   to {
-    transform: translateY(0%);
+    transform: translateY(0);
+  }
+`;
+const toup = keyframes`
+   from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
   }
 `;
 
-export const MenuOverlay = styled.div<IMenuProps>`
-  transition: all 0.2s ease-out;
-`;
-
 export const MenuNav = styled.div<IMenuProps>`
-  height: 100vh;
-  right: ${(props) => (props.isMenuOpened ? 0 : 0)}px;
-  padding: 30px;
-  width: 160px;
+  y: ${(props) => (props.isMenuOpened ? -0 : 0)}px;
   animation: ${(props) => (props.isMenuOpened ? down : toup)} 0.3s ease-out;
   transition: all 0.3s ease-out;
+  height: 100vh;
+  padding: 30px;
+  width: 160px;
 
   background-color: black;
   height: 40%;
