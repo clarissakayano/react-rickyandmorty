@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 import { BgContainer, Container, MenuNav } from './styles';
 
-const Mobile02: React.FC = () => {
+const Mobile: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -48,4 +48,4 @@ const Mobile02: React.FC = () => {
   );
 };
 
-export default memo(Mobile02);
+export default memo(Mobile);
