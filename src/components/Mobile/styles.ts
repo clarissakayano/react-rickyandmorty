@@ -1,92 +1,77 @@
-import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+
+export const Container = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: start;
+  z-index: 1;
+
+  svg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: all 0s ease-in-out;
+    transition: transform 0.5s ease;
+  }
+
+  .nav-link {
+    color: white;
+    transition: all 0.2s ease-out;
+  }
+  nav {
+    transition: all 0.5s ease-out;
+  }
+`;
+
+export const BgContainer = styled.div`
+  .open {
+    animation: down 0.5s ease-in-out;
+  }
+  .closed {
+    animation: up 0.5s ease-in-out;
+  }
+`;
 
 interface IMenuProps {
   isMenuOpened: boolean;
+  children?: React.ReactNode;
 }
 
-const fadeIn = keyframes`
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+const down = keyframes`
+   from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 `;
-const fadeOut = keyframes`
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-    }
-`;
-const enter = keyframes`
-    from{
-        right: -160px;
-    }
-    to{
-        right: 0;
-    }
-`;
-const leave = keyframes`
-    from{
-        right: 0;
-    }
-    to{
-        right: -160px;
-    }
-`;
-
-export const List = styled.ul`
-  display: flex;
-  list-style: none;
-  padding: 20px;
-  & > li:not(:last-child) {
-    margin-right: 36px;
+const toup = keyframes`
+   from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
   }
 `;
 
-export const LinkHeader = styled(Link)`
-  text-decoration: none;
-  color: #333;
-  font-weight: 700;
-  border: none;
-  &:hover {
-    color: #ff9800;
-  }
-`;
-export const MenuMobile = styled.div<IMenuProps>`
+export const MenuNav = styled.div<IMenuProps>`
+  y: ${(props) => (props.isMenuOpened ? -0 : 0)}px;
+  animation: ${(props) => (props.isMenuOpened ? down : toup)} 0.3s ease-out;
+  transition: all 0.3s ease-out;
   height: 100vh;
-  right: ${(props) => (props.isMenuOpened ? 0 : -160)}px;
   padding: 30px;
   width: 160px;
-  animation: ${(props) => (props.isMenuOpened ? enter : leave)} 0.2s ease-out;
-  transition: all 0.2s ease-out;
-`;
-export const MenuOverlay = styled.div<IMenuProps>`
-  opacity: ${(props) => (props.isMenuOpened ? 1 : 0)};
-  visibility: ${(props) => (props.isMenuOpened ? 'visible' : 'hidden')};
-  animation: ${(props) => (props.isMenuOpened ? fadeIn : fadeOut)} 0.2s ease-out;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-out;
-`;
 
-export const Nav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  color: white;
-  & > a {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-  }
+  background-color: black;
+  height: 40%;
+  width: 100%;
+
   a:hover {
-    color: #ff9800;
+    color: green;
   }
-`;
-
-export const H3 = styled.h3`
-  color: #ff9800;
-  font-size: 20px;
 `;

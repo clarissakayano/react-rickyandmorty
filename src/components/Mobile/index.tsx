@@ -1,48 +1,55 @@
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 
-import { Container } from 'react-bootstrap';
-import { VscThreeBars, VscChromeClose } from 'react-icons/vsc';
+import { Nav } from 'react-bootstrap';
+import { MdOutlineClose } from 'react-icons/md';
+// import { FiXCircle } from 'react-icons/fi';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
-import { H3, LinkHeader, List, MenuMobile, MenuOverlay, Nav } from './styles';
+import { BgContainer, Container, MenuNav } from './styles';
 
-const Mobile: React.FC = () => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+interface IMenuProps {
+  children?: React.ReactNode;
+}
+
+const Mobile: React.FC<IMenuProps> = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <>
-      <VscThreeBars
-        color="red"
-        onClick={() => setIsMenuOpened(true)}
-        className="fs-icon align-self-center mx-3 d-block d-sm-none"
-      />
+    <Container>
+      <div className="text-end">
+        <RxHamburgerMenu onClick={() => setOpen(!open)} />
+      </div>
 
-      <MenuOverlay
-        isMenuOpened={isMenuOpened}
-        onClick={() => setIsMenuOpened(false)}
-        className="d-flex d-md-none position-fixed h-100 w-100"
-      />
-      <Container>
-        <MenuMobile
-          isMenuOpened={isMenuOpened}
-          className="d-flex flex-column d-md-none position-fixed bg-dark"
+      {open && (
+        <MenuNav
+          isMenuOpened={open}
+          onClick={() => setOpen(!open)}
+          className="d-flex d-md-none flex-column position-fixed "
         >
-          <VscChromeClose
-            onClick={() => setIsMenuOpened(false)}
-            className="text-white align-self-end mb-5"
-          />
+          <BgContainer>
+            <MdOutlineClose color="white" />
+            <div className="d-flex justify-content-center">
+              <nav className={open ? 'open' : 'closed'}>
+                <div id="menu">
+                  <Link className="nav-link mt-5 " to="/">
+                    <Nav>Home</Nav>
+                  </Link>
 
-          <hr />
-          <Nav>
-            <LinkHeader to="/">Characters</LinkHeader>
-            <hr />
-            <LinkHeader to="/location">Locations123</LinkHeader>
-            <hr />
-            <LinkHeader to="/episodes">Episodes</LinkHeader>
-            <hr />
-          </Nav>
-        </MenuMobile>
-      </Container>
-    </>
+                  <Link className="nav-link mt-4" to="/location">
+                    <Nav>Location</Nav>
+                  </Link>
+
+                  <Link className="nav-link mt-4" to="/episodes">
+                    <Nav>Episodes</Nav>
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          </BgContainer>
+        </MenuNav>
+      )}
+    </Container>
   );
 };
 
