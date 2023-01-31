@@ -14,9 +14,7 @@ const EpisodeCard: React.FC<IEpisodesCardProps> = ({ episode }) => (
   <Card className="w-100">
     <Card.Body>
       <Card.Title>
-        <p>
-          <Text>Episode: {episode.episode}</Text>
-        </p>
+        <Text>Episode: {episode.episode}</Text>
         <p>Air Date: {episode.air_date}</p>
         <p className="fw-bold">Characters: {episode.characters.length}</p>
       </Card.Title>

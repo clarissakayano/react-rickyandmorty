@@ -2,11 +2,11 @@ import { Ratio } from 'react-bootstrap';
 import styled from 'styled-components';
 
 interface ICoverProps {
-  coverImage: string;
+  coverimage: string;
 }
 
 export const Cover = styled(Ratio)<ICoverProps>`
-  background-image: ${({ coverImage }) => `url(${coverImage})`};
+  background-image: ${({ coverimage }) => `url(${coverimage})`};
   background-size: cover;
   background-position: center center;
 `;

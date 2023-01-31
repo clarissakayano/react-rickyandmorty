@@ -4,22 +4,17 @@ import { Link } from 'react-router-dom';
 
 import Mobile from 'components/Mobile';
 
-import { BannerContainer, TitleRM, Nav, Log, ContainerMobile } from './styles';
+import { BannerContainer, TitleRM, Nav, Log, BgColor } from './styles';
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <ContainerMobile>
-        <div className="container d-sm-none">
-          <div className="row">
-            <Log className="d-flex justify-content-end">
-              <Mobile />
-            </Log>
-          </div>
-        </div>
-      </ContainerMobile>
+    <div>
       <BannerContainer className="flex-grow-1">
-        <div className="container">
+        <Log className="d-flex mt-2 d-sm-none justify-content-end">
+          <Mobile />
+        </Log>
+
+        <BgColor>
           <div className=" d-flex text-center p-4 row-col-none d-none d-sm-block d-lg-block d-xl-block">
             <ul className="d-flex justify-content-between list-unstyled">
               <li className="nav-item">
@@ -39,16 +34,15 @@ const Header: React.FC = () => {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="d-flex justify-content-center">
-          <TitleRM fontSize={6} className="mt-5">
-            {' '}
-            The Rick and Morty
-          </TitleRM>
-        </div>
+          <div className="d-flex justify-content-center">
+            <TitleRM fontSize={6} className="mt-5">
+              {' '}
+              The Rick and Morty
+            </TitleRM>
+          </div>
+        </BgColor>
       </BannerContainer>
-    </header>
+    </div>
   );
 };
 

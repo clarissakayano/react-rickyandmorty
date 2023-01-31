@@ -15,7 +15,6 @@ import { BgColor, Title } from './styles';
 
 const Locations: React.FC = () => {
   const params = useParams();
-  console.log('params', params);
   const [locations, setLocations] = useState<LocationType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [InfoPages, setInfoPages] = useState(0);

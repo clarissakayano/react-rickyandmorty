@@ -1,56 +1,50 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 
-import { Nav } from 'react-bootstrap';
-import { MdOutlineClose } from 'react-icons/md';
-// import { FiXCircle } from 'react-icons/fi';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { RiCloseFill } from 'react-icons/ri';
 
-import { BgContainer, Container, MenuNav } from './styles';
+import { Bars, LinkMenu, MenuMobile, MenuOverlay, Nav } from './styles';
 
-interface IMenuProps {
-  children?: React.ReactNode;
-}
-
-const Mobile: React.FC<IMenuProps> = () => {
-  const [open, setOpen] = useState(false);
-
+const Menu: React.FC = () => {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
   return (
-    <Container>
-      <div className="text-end">
-        <RxHamburgerMenu onClick={() => setOpen(!open)} />
-      </div>
+    <>
+      <MenuOverlay
+        isMenuOpened={isMenuOpened}
+        onClick={() => setIsMenuOpened(false)}
+        className="d-flex d-md-none position-fixed h-100 w-100"
+      />
+      <Bars>
+        <GiHamburgerMenu
+          onClick={() => setIsMenuOpened(true)}
+          className="align-self-center mx-3 d-block d-sm-none mt-2"
+        />
+      </Bars>
+      <MenuMobile
+        isMenuOpened={isMenuOpened}
+        className="d-flex flex-column d-md-none position-fixed bg-dark"
+      >
+        <RiCloseFill
+          onClick={() => setIsMenuOpened(false)}
+          className="text-white align-self-end mb-5"
+        />
 
-      {open && (
-        <MenuNav
-          isMenuOpened={open}
-          onClick={() => setOpen(!open)}
-          className="d-flex d-md-none flex-column position-fixed "
-        >
-          <BgContainer>
-            <MdOutlineClose color="white" />
-            <div className="d-flex justify-content-center">
-              <nav className={open ? 'open' : 'closed'}>
-                <div id="menu">
-                  <Link className="nav-link mt-5 " to="/">
-                    <Nav>Home</Nav>
-                  </Link>
+        <Nav className="text-center">
+          <LinkMenu to="/">
+            <p>Characters</p>
+          </LinkMenu>
 
-                  <Link className="nav-link mt-4" to="/location">
-                    <Nav>Location</Nav>
-                  </Link>
+          <LinkMenu to="/location">
+            <p>Locations</p>
+          </LinkMenu>
 
-                  <Link className="nav-link mt-4" to="/episodes">
-                    <Nav>Episodes</Nav>
-                  </Link>
-                </div>
-              </nav>
-            </div>
-          </BgContainer>
-        </MenuNav>
-      )}
-    </Container>
+          <LinkMenu to="/episodes">
+            <p>Episodes</p>
+          </LinkMenu>
+        </Nav>
+      </MenuMobile>
+    </>
   );
 };
 
-export default memo(Mobile);
+export default memo(Menu);

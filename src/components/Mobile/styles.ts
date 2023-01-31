@@ -1,77 +1,93 @@
+import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-
-export const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 35%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  align-items: start;
-  z-index: 1;
-
-  svg {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    transition: all 0s ease-in-out;
-    transition: transform 0.5s ease;
-  }
-
-  .nav-link {
-    color: white;
-    transition: all 0.2s ease-out;
-  }
-  nav {
-    transition: all 0.5s ease-out;
-  }
-`;
-
-export const BgContainer = styled.div`
-  .open {
-    animation: down 0.5s ease-in-out;
-  }
-  .closed {
-    animation: up 0.5s ease-in-out;
-  }
-`;
 
 interface IMenuProps {
   isMenuOpened: boolean;
-  children?: React.ReactNode;
 }
 
-const down = keyframes`
-   from {
+export const LinkMenu = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  border: none;
+
+  p:hover {
+    color: green;
+  }
+  p {
+    color: white;
+  }
+`;
+
+const fadeIn = keyframes`
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+`;
+const fadeOut = keyframes`
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+`;
+const up = keyframes`
+    from {
     transform: translateY(-100%);
   }
   to {
     transform: translateY(0);
   }
 `;
-const toup = keyframes`
-   from {
-    transform: translateY(100%);
+const down = keyframes`
+    from {
+    transform: translateY(0%);
   }
   to {
-    transform: translateY(0);
+    transform: translateY(-100%);
   }
 `;
 
-export const MenuNav = styled.div<IMenuProps>`
-  y: ${(props) => (props.isMenuOpened ? -0 : 0)}px;
-  animation: ${(props) => (props.isMenuOpened ? down : toup)} 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  height: 100vh;
-  padding: 30px;
-  width: 160px;
-
-  background-color: black;
-  height: 40%;
-  width: 100%;
-
-  a:hover {
-    color: green;
+export const List = styled.ul`
+  display: flex;
+  list-style: none;
+  padding: 170px;
+  & > li:not(:last-child) {
+    margin-right: 36px;
   }
+`;
+export const MenuMobile = styled.div<IMenuProps>`
+  height: 32vh;
+  margin-top: ${(props) => (props.isMenuOpened ? 0 : -500)}px;
+  padding: 30px;
+  width: 200px;
+  animation: ${(props) => (props.isMenuOpened ? up : down)} 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  z-index: 4;
+`;
+export const MenuOverlay = styled.div<IMenuProps>`
+  animation: ${(props) => (props.isMenuOpened ? fadeIn : fadeOut)} 0.2s ease-out;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: ${(props) => (props.isMenuOpened ? 1 : 0)};
+  visibility: ${(props) => (props.isMenuOpened ? 'visible' : 'hidden')};
+  transition: all 0.2s ease-out;
+  z-index: 3;
+`;
+
+export const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  color: white;
+  & > a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+`;
+export const Bars = styled.nav`
+  display: inline-block;
 `;

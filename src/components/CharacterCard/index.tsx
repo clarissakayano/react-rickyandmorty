@@ -17,7 +17,7 @@ interface ICharacterCardProps {
 const CharacterCard: React.FC<ICharacterCardProps> = ({ character }) => (
   <Card className="w-100 color mb-3">
     <Link to={`/characters/${character.id}/${strToSlug(character.name)}`}>
-      <Cover aspectRatio="1x1" coverImage={character.image}>
+      <Cover aspectRatio="1x1" coverimage={character.image}>
         <div />
       </Cover>
     </Link>

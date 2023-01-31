@@ -28,11 +28,11 @@ export const BannerContainer = styled.section`
 
   @media screen and (min-width: 376px) and (max-width: 575px) {
     height: 300px;
-    background-size: 120%;
-    background-position-y: 0rem;
+    background: cover;
   }
-
-  background-color: #010a01;
+`;
+export const BgColor = styled.div`
+  background-color: transparent;
   animation: flicker 1.5s infinite alternate;
   color: #fff;
   @keyframes flicker {
@@ -84,16 +84,16 @@ export const Nav = styled.span`
   color: white;
 `;
 
-export const Log = styled.h3`
+export const Log = styled.div`
   color: white;
   font-family: Martel;
   font-size: 24px;
   align-items: flex-start;
+  margin-left: 0px;
+  background-color: transparent;
+  color: white;
 `;
 
-export const ContainerMobile = styled.div`
-  background-color: transparent;
-`;
 export const Cont = styled.div`
   padding-top: -8;
 `;
