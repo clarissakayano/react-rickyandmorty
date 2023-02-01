@@ -29,7 +29,7 @@ const Menu: React.FC = () => {
           className="text-white align-self-end mb-5"
         />
 
-        <Nav className="text-center">
+        <Nav className="align-self-center">
           <LinkMenu to="/">
             <p>Characters</p>
           </LinkMenu>

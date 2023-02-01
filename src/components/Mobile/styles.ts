@@ -61,10 +61,10 @@ export const List = styled.ul`
   }
 `;
 export const MenuMobile = styled.div<IMenuProps>`
-  height: 32vh;
+  height: 35vh;
+  width: 100%;
   margin-top: ${(props) => (props.isMenuOpened ? 0 : -500)}px;
-  padding: 30px;
-  width: 200px;
+  padding: 4px 1px;
   animation: ${(props) => (props.isMenuOpened ? up : down)} 0.2s ease-out;
   transition: all 0.2s ease-out;
   z-index: 4;
