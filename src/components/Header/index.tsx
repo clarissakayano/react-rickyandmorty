@@ -14,7 +14,7 @@ const Header: React.FC = () => {
           <Mobile />
         </Log>
 
-        <BgColor>
+        <div>
           <div className=" d-flex text-center p-4 row-col-none d-none d-sm-block d-lg-block d-xl-block">
             <ul className="d-flex justify-content-between list-unstyled">
               <li className="nav-item">
@@ -34,13 +34,13 @@ const Header: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div className="d-flex justify-content-center">
+          <BgColor className="d-flex justify-content-center">
             <TitleRM fontSize={6} className="mt-5">
               {' '}
               The Rick and Morty
             </TitleRM>
-          </div>
-        </BgColor>
+          </BgColor>
+        </div>
       </BannerContainer>
     </div>
   );

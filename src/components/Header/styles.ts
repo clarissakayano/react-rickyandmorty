@@ -79,7 +79,8 @@ export const TitleRM = styled.h1<ITitleRMProps>`
 `;
 
 export const Nav = styled.span`
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
   font-family: 'Helvetica Neue', sans-serif;
   color: white;
 `;
