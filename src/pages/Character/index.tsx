@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { memo, useCallback, useEffect, useState } from 'react';
 
 import { Button, Container, Spinner } from 'react-bootstrap';
@@ -5,6 +6,8 @@ import { useParams } from 'react-router-dom';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+
+import useTitle from 'hooks/useTitle';
 
 import { CharacterType } from 'types/CharacterType';
 
@@ -25,6 +28,13 @@ const Character: React.FC = () => {
     setIsLoading(false);
     setCharacter(response);
   }, [id]);
+
+  const setTitle = useTitle();
+
+  useEffect(() => {
+    setTitle('Caracter');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   useEffect(() => {
     fetchCharacter();

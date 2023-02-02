@@ -7,6 +7,8 @@ import EpisodeCard from 'components/EpisodeCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 
+import useTitle from 'hooks/useTitle';
+
 import { Pagination } from 'styles/GlobalStyles/Pagination';
 
 import { EpisodesType } from 'types/EpisodesType';
@@ -43,6 +45,13 @@ const Episodes: React.FC = () => {
     },
     [fetchEpisodes],
   );
+
+  const setTitle = useTitle();
+
+  useEffect(() => {
+    setTitle('Episodes');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   return (
     <>
