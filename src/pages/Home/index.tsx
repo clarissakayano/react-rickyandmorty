@@ -6,6 +6,8 @@ import CharacterCard from 'components/CharacterCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 
+import useTitle from 'hooks/useTitle';
+
 import { Pagination } from 'styles/GlobalStyles/Pagination';
 
 import { CharacterType } from 'types/CharacterType';
@@ -40,6 +42,13 @@ const Home: React.FC = () => {
     },
     [fetchCharacters],
   );
+
+  const setTitle = useTitle();
+
+  useEffect(() => {
+    setTitle('Home');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   return (
     <>
