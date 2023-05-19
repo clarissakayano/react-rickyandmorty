@@ -46,7 +46,7 @@ const Home: React.FC = () => {
   const setTitle = useTitle();
 
   useEffect(() => {
-    setTitle('Home');
+    setTitle('');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   });
 
