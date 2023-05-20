@@ -6,7 +6,7 @@ type UseTitleType = () => (title?: string | undefined) => void;
 
 const useTitle: UseTitleType = () => {
   const setTitle = useCallback((title?: string) => {
-    const appName = Config.app.name ?? `Ricky and Morty v${Config.app.version}`;
+    const appName = Config.app.name ?? `Ricky and Morty ${Config.app.version}`;
     document.title = title ? `${title} | ${appName}` : appName;
   }, []);
 

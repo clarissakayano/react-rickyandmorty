@@ -45,11 +45,6 @@ const Home: React.FC = () => {
 
   const setTitle = useTitle();
 
-  useEffect(() => {
-    setTitle('');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
-
   return (
     <>
       <BgColor>
